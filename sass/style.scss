@@ -1,0 +1,544 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin commonttlwh($p1, $p2, $p3, $p4) {
+  top: $p1;
+  left: $p2;
+  width: $p3;
+  height: $p4;
+  opacity: 1;
+}
+@mixin commonimage($p1, $p2, $p3, $p4) {
+  position: absolute;
+  @include commonttlwh($p1, $p2, $p3, $p4);
+  z-index: 2;
+}
+@mixin commonboxdownproperty {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  .boxdown-nav {
+    flex: 1;
+    display: flex;
+    margin: 20px;
+    .namepos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+      .name {
+        font-weight: bold;
+      }
+    }
+    .stars {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+    }
+  }
+  .boxdown-text {
+    flex: 1;
+  }
+}
+@mixin commonblackbox($p1, $p2, $p3, $p4, $p5) {
+  @include commonboxdowncon($p1, $p2, $p3, $p4, $p5);
+  border-radius: 0px;
+}
+@mixin commonbuttoncon($p1, $p2, $p3, $p4) {
+  position: absolute;
+  @include commonttlwh($p1, $p2, $p3, $p4);
+  background: #1492e6 0% 0% no-repeat padding-box;
+  box-shadow: 0px 16px 48px #00000029;
+  border-radius: 33px;
+  z-index: 2;
+}
+@mixin commonboxdowncon($p1, $p2, $p3, $p4, $p5) {
+  @include commonbuttoncon($p1, $p2, $p3, $p4);
+  background: $p5;
+}
+@mixin commonbutton($p1, $p2, $p3, $p4) {
+  position: absolute;
+  @include commonttlwh($p1, $p2, $p3, $p4);
+  text-align: left;
+  font: normal normal 600 23px/31px Nunito Sans;
+  letter-spacing: 0px;
+  color: #ffffff;
+  z-index: 3;
+}
+@mixin commoncode($p1, $p2, $p3, $p4, $p5) {
+  position: absolute;
+  @include commonttlwh($p1, $p2, $p3, $p4);
+  text-align: left;
+  font: $p5;
+  letter-spacing: 0px;
+  color: #000000;
+  z-index: 2;
+}
+.full-container {
+  @include commonttlwh(0px, 0px, 1280px, 5339px);
+  position: relative;
+  background: #fdfcfc 0% 0% no-repeat padding-box;
+  .imgcon {
+    @include commonimage(33px, 558px, 164px, 48px);
+    border: 1px solid #707070;
+  }
+  .nav-container {
+    @include commonimage(111px, 249px, 782px, 26px);
+    display: flex;
+    justify-content: space-between;
+    .nav-item {
+      left: 356px;
+      width: 45px;
+      height: 26px;
+      text-align: left;
+      font: normal normal 600 19px/26px Segoe UI;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+    }
+  }
+  .line {
+    position: absolute;
+    top: 153px;
+    width: 1280px;
+    height: 0px;
+    border: 1px solid #707070;
+    opacity: 1;
+  }
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    .title {
+      @include commoncode(
+        254px,
+        121px,
+        548px,
+        108px,
+        normal normal 900 40px/54px Nunito Sans
+      );
+    }
+    .text {
+      @include commoncode(
+        382px,
+        121px,
+        520px,
+        120px,
+        normal normal normal 18px/24px Nunito Sans
+      );
+    }
+    .button-cont {
+      @include commonbuttoncon(564px, 121px, 247px, 65px);
+    }
+    .button {
+      @include commonbutton(581px, 171px, 148px, 31px);
+    }
+  }
+  .right-container {
+    position: absolute;
+    @include commonttlwh(156px, 734px, 509px, 518px);
+  }
+  .background1 {
+    position: absolute;
+    background: #f8fafc 0% 0% no-repeat padding-box;
+    @include commonttlwh(460px, 0px, 1280px, 580px);
+  }
+  .mid-title {
+    @include commoncode(
+      833px,
+      196px,
+      888px,
+      47px,
+      normal normal bold 35px/47px Nunito Sans
+    );
+  }
+  .midimg1 {
+    @include commonimage(1629px, 114px, 241px, 157px);
+  }
+  .midimg2 {
+    @include commonimage(1604px, 495px, 244px, 188px);
+  }
+  .lefttop-img {
+    @include commonimage(2304px, 105px, 70px, 70px);
+  }
+  .righttop-img {
+    @include commonimage(2555px, 747px, 62px, 62px);
+  }
+  .leftbottom-img {
+    @include commonimage(2879px, 105px, 78px, 78px);
+  }
+  .rightbottom-img {
+    @include commonimage(3201px, 742px, 90px, 90px);
+  }
+  .card1 {
+    @include commonboxdowncon(
+      940px,
+      138px,
+      308px,
+      320px,
+      #ffffff 0% 0% no-repeat padding-box
+    );
+  }
+  .card1-text {
+    position: absolute;
+    background: transparent
+      url("img/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim. Proin in diam a justo sollicitudin mattis eu sagittisnunc. In hac habita.png")
+      0% 0% no-repeat padding-box;
+    z-index: 3;
+    @include commonttlwh(1020px, 157px, 275px, 192px);
+  }
+  .card1-title {
+    @include commoncode(
+      978px,
+      197px,
+      190px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .card2 {
+    @include commonboxdowncon(
+      940px,
+      486px,
+      308px,
+      320px,
+      #ffffff 0% 0% no-repeat padding-box
+    );
+  }
+  .card2-title {
+    @include commoncode(
+      978px,
+      545px,
+      190px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .card2-text {
+    position: absolute;
+    background: transparent
+      url("img/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim. Proin in diam a justo sollicitudin mattis eu sagittisnunc. In hac habita.png")
+      0% 0% no-repeat padding-box;
+    opacity: 1;
+    @include commonttlwh(1020px, 503px, 275px, 192px);
+    z-index: 3;
+  }
+  .card3 {
+    @include commonboxdowncon(
+      940px,
+      834px,
+      308px,
+      320px,
+      #ffffff 0% 0% no-repeat padding-box
+    );
+  }
+  .card3-title {
+    @include commoncode(
+      978px,
+      893px,
+      190px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .card3-text {
+    position: absolute;
+    background: transparent
+      url("img/Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim. Proin in diam a justo sollicitudin mattis eu sagittisnunc. In hac habita.png")
+      0% 0% no-repeat padding-box;
+    z-index: 3;
+    @include commonttlwh(1020px, 851px, 275px, 192px);
+  }
+  .down-title {
+    @include commoncode(
+      1446px,
+      196px,
+      888px,
+      47px,
+      normal normal bold 35px/47px Nunito Sans
+    );
+  }
+  .sec-card-title1 {
+    @include commoncode(
+      1825px,
+      113px,
+      190px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .sec-card-text1 {
+    @include commoncode(
+      1865px,
+      113px,
+      328px,
+      168px,
+      normal normal normal 18px/24px Nunito Sans
+    );
+  }
+  .sec-card-title2 {
+    @include commoncode(
+      1825px,
+      493px,
+      190px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .sec-card-text2 {
+    @include commoncode(
+      1865px,
+      493px,
+      328px,
+      168px,
+      normal normal normal 18px/24px Nunito Sans
+    );
+  }
+  .sec-card-title3 {
+    @include commoncode(
+      1825px,
+      875px,
+      190px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .sec-card-text3 {
+    @include commoncode(
+      1865px,
+      875px,
+      328px,
+      168px,
+      normal normal normal 18px/24px Nunito Sans
+    );
+  }
+  .verydown-title {
+    @include commoncode(
+      2171px,
+      196px,
+      888px,
+      47px,
+      normal normal bold 35px/47px Nunito Sans
+    );
+  }
+  .lefttop-title {
+    @include commoncode(
+      2323px,
+      214px,
+      253px,
+      32px,
+      normal normal bold 24px/32px Nunito Sans
+    );
+  }
+  .lefttop-text {
+    @include commoncode(
+      2388px,
+      105px,
+      644px,
+      56px,
+      normal normal normal 21px/28px Nunito Sans
+    );
+  }
+  .lefttop-buttoncont {
+    @include commonbuttoncon(2466px, 105px, 247px, 65px);
+  }
+  .lefttop-button {
+    @include commonbutton(2483px, 155px, 148px, 31px);
+  }
+  .righttop-title {
+    @include commoncode(
+      2570px,
+      838px,
+      253px,
+      32px,
+      normal normal bold 24px/32px Nunito Sans
+    );
+  }
+  .righttop-text {
+    @include commoncode(
+      2629px,
+      747px,
+      471px,
+      56px,
+      normal normal normal 21px/28px Nunito Sans
+    );
+  }
+  .righttop-buttoncont {
+    @include commonbuttoncon(2718px, 747px, 247px, 65px);
+  }
+  .righttop-button {
+    @include commonbutton(2735px, 797px, 148px, 31px);
+  }
+  .leftbottom-title {
+    @include commoncode(
+      2900px,
+      207px,
+      253px,
+      32px,
+      normal normal bold 24px/32px Nunito Sans
+    );
+  }
+  .leftbottom-text {
+    @include commoncode(
+      2978px,
+      105px,
+      644px,
+      56px,
+      normal normal normal 21px/28px Nunito Sans
+    );
+  }
+  .leftbottom-buttoncont {
+    @include commonbuttoncon(3059px, 105px, 247px, 65px);
+  }
+  .leftbottom-button {
+    @include commonbutton(3076px, 155px, 148px, 31px);
+  }
+  .rightbottom-title {
+    @include commoncode(
+      3230px,
+      845px,
+      253px,
+      32px,
+      normal normal bold 24px/32px Nunito Sans
+    );
+  }
+  .rightbottom-text {
+    @include commoncode(
+      3302px,
+      747px,
+      471px,
+      56px,
+      normal normal normal 21px/28px Nunito Sans
+    );
+  }
+  .rightbottom-buttoncont {
+    @include commonbuttoncon(3387px, 742px, 247px, 65px);
+  }
+  .rightbottom-button {
+    @include commonbutton(3404px, 792px, 148px, 31px);
+  }
+  .boxdown-small-img {
+    @include commonimage(3803px, 102px, 64px, 63px);
+  }
+  .downsmall-title {
+    @include commoncode(
+      3641px,
+      456px,
+      368px,
+      47px,
+      normal normal bold 35px/47px Nunito Sans
+    );
+  }
+  .boxdown-cont {
+    @include commonboxdowncon(
+      3764px,
+      59px,
+      1097px,
+      363px,
+      #f8fafc 0% 0% no-repeat padding-box
+    );
+  }
+  .boxdown-cont-title {
+    @include commoncode(
+      3817px,
+      179px,
+      275px,
+      34px,
+      normal normal 900 25px/34px Nunito Sans
+    );
+  }
+  .boxdown-cont-card1 {
+    @include commonboxdowncon(
+      3915px,
+      180px,
+      250px,
+      263px,
+      #ffffff 0% 0% no-repeat padding-box
+    );
+    @include commonboxdownproperty;
+  }
+  .boxdown-cont-card2 {
+    @include commonboxdowncon(
+      3915px,
+      490px,
+      250px,
+      263px,
+      #ffffff 0% 0% no-repeat padding-box
+    );
+    @include commonboxdownproperty;
+  }
+  .boxdown-cont-card3 {
+    @include commonboxdowncon(
+      3915px,
+      801px,
+      250px,
+      263px,
+      #ffffff 0% 0% no-repeat padding-box
+    );
+    @include commonboxdownproperty;
+  }
+  .last-title {
+    @include commoncode(
+      4476px,
+      196px,
+      888px,
+      47px,
+      normal normal bold 35px/47px Nunito Sans
+    );
+  }
+  .lastdown-title1 {
+    @include commoncode(
+      4762px,
+      232px,
+      118px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .lastdown-title2 {
+    @include commoncode(
+      4762px,
+      578px,
+      192px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .lastdown-title3 {
+    @include commoncode(
+      4762px,
+      979px,
+      68px,
+      24px,
+      normal normal bold 18px/24px Nunito Sans
+    );
+  }
+  .lastdown-img1 {
+    @include commonimage(4686px, 188px, 185px, 58px);
+  }
+  .lastdown-img2 {
+    @include commonimage(4665px, 574px, 177px, 100px);
+  }
+  .lastdown-img3 {
+    position: absolute;
+    top: 4666px;
+    left: 968px;
+    width: 89px;
+    height: 89px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .blackbox {
+    @include commonblackbox(
+      4975px,
+      0px,
+      1280px,
+      369px,
+      #000000 0% 0% no-repeat padding-box
+    );
+  }
+}
